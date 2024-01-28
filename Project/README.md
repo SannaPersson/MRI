@@ -17,4 +17,30 @@ If you are on a unix-based system extract and move the installation to appropria
 tar -xvzf julia-1.8.0-linux-x86_64.tar.gz
 mv julia-1.8.0 ~
 export PATH="~/julia-1.8.0/bin:$PATH"
+```
+```
+julia> ]
+(@v1.8) pkg> add KomaMRI
+julia> using KomaMRI
+```
 
+To start the KomaUI with defalult settings run:
+`
+julia> KomaUI()
+`
+
+If you want to customize the UI settings, `launch_komaui.jl` shows an example. 
+
+The latest Julia version was not compatible with KomaMRI but 1.8 worked well. 
+
+For Pulseq, just download the github repository and add it to your path in Matlab
+
+`git clone git@github.com:pulseq/pulseq.git`
+
+
+## To test out the pipeline 
+Run `spiral.m` to generate an example spiral sequence from Pulseq. Simulate the sequence with `simulation.jl` and do a re-gridding and reconstruction with `gridding.m`
+
+
+## Project files
+The implemented four-shot sequence is in `four_shot.m` and the corresponding gridding which is currently not working is found in `gridding_four_shot.m`.
